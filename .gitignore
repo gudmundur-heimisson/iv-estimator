@@ -1,0 +1,7 @@
+.project
+bower_components/
+dist/
+node_modules/
+spec/**/*.js
+typings/
+*.swp

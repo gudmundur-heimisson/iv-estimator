@@ -1,0 +1,18 @@
+{
+  "name": "pokemon-iv-estimator",
+  "description": "Pokemon IV Estimator Webapp",
+  "main": "index.js",
+  "authors": [
+    "Guðmundur Heimisson"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
