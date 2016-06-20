@@ -1,4 +1,4 @@
-import { Interval } from '../scripts/ivestimator'
+import { Interval } from '../scripts/interval'
 
 describe('Interval', () => {
     let ive0: Interval, ive1: Interval, ive2: Interval, ive3: Interval, ive4: Interval;
@@ -21,12 +21,12 @@ describe('Interval', () => {
         expect(ive2.intersect(ive1)).toEqual(ive0);
     });
 
-    it('it intersects on the left', () => {
+    it('intersects on the left', () => {
         expect(ive2.intersect(ive4)).toEqual(ive2);
         expect(ive4.intersect(ive2)).toEqual(ive2);
     });
 
-    it('it intersects on the right', () => {
+    it('intersects on the right', () => {
         expect(ive1.intersect(ive4)).toEqual(ive1);
         expect(ive4.intersect(ive1)).toEqual(ive1);
     });
