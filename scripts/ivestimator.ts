@@ -6,8 +6,13 @@ class Interval {
     public upper: number;
 
     constructor(bound1: number, bound2: number) {
-        this.lower = bound1 < bound2 ? bound1 : bound2;
-        this.upper = bound1 > bound2 ? bound1 : bound2;
+        if (bound1 == null || bound2 == null) {
+            this.lower = null;
+            this.upper = null;
+        } else {
+            this.lower = bound1 < bound2 ? bound1 : bound2;
+            this.upper = bound1 > bound2 ? bound1 : bound2;
+        }
     }
 
     public intersect(other: Interval): Interval {
