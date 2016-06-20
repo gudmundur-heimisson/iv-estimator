@@ -1,5 +1,5 @@
-import { Stat } from '../src/ts/stats'
-import { Nature, natures } from '../src/ts/nature'
+import { Stat } from '../scripts/stats'
+import { Nature, natures } from '../scripts/nature'
 
 describe('Nature', () => {
     it('non-neutral helps/hinders', () => {

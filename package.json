@@ -11,8 +11,10 @@
   },
   "author": "Guðmundur Heimisson",
   "license": "Apache-2.0",
+  "repository": "https://github.com/gudmundur-heimisson/iv-estimator.git",
   "devDependencies": {
     "bower": "^1.7.9",
+    "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",
     "gulp-jasmine": "^2.3.0",
     "gulp-less": "^3.1.0",

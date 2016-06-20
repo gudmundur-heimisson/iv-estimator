@@ -4,8 +4,7 @@ var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
 var jasmine = require('gulp-jasmine');
 var tsProject = typescript.createProject('tsconfig.json', {
-    rootDir: 'src/ts',
-    outDir: '../../dist/js'
+    outDir: 'dist/js'
 });
 
 gulp.task('ts', function () {
@@ -18,39 +17,24 @@ gulp.task('ts', function () {
 });
 
 gulp.task('watch-ts', function () {
-    return gulp.watch(['src/ts/*.ts'], ['ts']);
+    return gulp.watch(['scripts/*.ts', 'spec/*.spec.ts'], ['ts', 'jasmine']);
 });
 
-gulp.task('ts-spec', function () {
-    var result = gulp.src(['typings/index.d.ts', 'src/ts/*.ts', 'spec/*.ts'])
-        .pipe(sourcemaps.init())
-        .pipe(typescript({
-            noImplicitAny: true,
-            rootDir: 'spec',
-            outDir: 'js'
-        }));
-    return result.js
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('spec/js'));
-});
-
-gulp.task('watch-spec', function () {
-    return gulp.watch(['src/ts/*.ts', 'spec/*.spec.ts'], ['ts-spec', 'jasmine']);
-});
-
-gulp.task('jasmine', ['ts-spec'], function () {
-    return gulp.src('spec/**/*.spec.js')
+gulp.task('jasmine', ['ts'], function () {
+    return gulp.src('dist/**/*.spec.js')
         .pipe(jasmine());
 });
 
 gulp.task('less', function () {
-    return gulp.src('src/less/*.less')
+    return gulp.src('**/*.less')
         .pipe(less({}))
         .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('watch-less', function () {
-    return gulp.watch(['src/less/*.less'], ['less']);
+    return gulp.watch(['styles/*.less'], ['less']);
 });
 
-gulp.task('watch', ['watch-ts', 'watch-spec', 'watch-less'], function () { });
+gulp.task('watch', ['watch-ts', 'watch-less'], function () { });
+
+gulp.task('default', ['watch', 'jasmine'], function () {});
