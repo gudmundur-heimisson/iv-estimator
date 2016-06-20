@@ -38,7 +38,7 @@ const descriptions = [
     ]
 ];
 
-let characters: { [description: string]: Character } = {}
+let characters: { [description: string]: Character } = {};
 for (let row = 0; row < 5; ++row) {
     let possibleValues: Array<number> = [];
     for (let iv = row; iv < 32; iv += 5) {
