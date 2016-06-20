@@ -8,6 +8,7 @@
   "license": "Apache-2.0",
   "homepage": "",
   "private": true,
+"repository": "https://github.com/gudmundur-heimisson/iv-estimator.git",
   "ignore": [
     "**/.*",
     "node_modules",
