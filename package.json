@@ -19,10 +19,10 @@
     "gulp": "^3.9.1",
     "gulp-jasmine": "^2.3.0",
     "gulp-less": "^3.1.0",
-    "gulp-sourcemaps": "^1.0.1",
-    "gulp-typescript": "^2.13.6",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-typescript": "^3.1.4",
     "jasmine": "^2.4.1",
-    "typescript": "^1.8.10",
-    "typings": "^1.0.4"
+    "typescript": "^2.1.5",
+    "typings": "^2.1.0"
   }
 }
